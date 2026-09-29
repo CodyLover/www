@@ -1,188 +1,1335 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sjors van Diepen – Business Intelligence Analist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Professional CV of Sjors van Diepen, Senior Business Intelligence Analist in Financial Markets.">
+
+  <title>Sjors van Diepen | Senior Business Intelligence Analist</title>
+
   <style>
+    :root {
+      --navy: #102a43;
+      --navy-dark: #071c2c;
+      --blue: #146c94;
+      --accent: #0077b5;
+      --background: #f4f6f8;
+      --surface: #ffffff;
+      --surface-alt: #eaf4f8;
+      --text: #17232d;
+      --muted: #61717e;
+      --border: #dce3e8;
+      --hero-start: #071c2c;
+      --hero-end: #174f68;
+      --hero-text: #ffffff;
+      --hero-muted: #c4d9e2;
+      --shadow: 0 12px 34px rgba(10, 42, 66, 0.08);
+      --radius: 10px;
+    }
+
+    html[data-theme="dark"] {
+      --navy: #78c9ea;
+      --navy-dark: #060d14;
+      --blue: #67c3e7;
+      --accent: #5db9ed;
+      --background: #0b1118;
+      --surface: #111a23;
+      --surface-alt: #162532;
+      --text: #edf3f7;
+      --muted: #a4b3bf;
+      --border: #283743;
+      --hero-start: #07111a;
+      --hero-end: #102d3d;
+      --hero-text: #ffffff;
+      --hero-muted: #b8ced8;
+      --shadow: 0 12px 34px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
     }
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #0055a5;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
+
+    a {
+      color: inherit;
       text-decoration: none;
-      padding: 8px 0;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    p {
+      margin-top: 0;
     }
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 0 20px;
+
+    button {
+      font: inherit;
     }
-    section {
-      margin-bottom: 30px;
-      background: #fff;
-      padding: 20px;
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .floating-controls {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control-button {
+      min-width: 42px;
+      height: 38px;
+      padding: 0 11px;
+      border: 1px solid var(--border);
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: var(--surface);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
     }
-    h2 {
-      color: #003366;
+
+    .control-button:hover {
+      border-color: var(--blue);
+      background: var(--surface-alt);
     }
-    footer {
-      background: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
+
+    .language-button {
+      min-width: 52px;
+    }
+
+    .hero {
+      padding: 90px 0 82px;
+      background: linear-gradient(
+        135deg,
+        var(--hero-start),
+        var(--hero-end)
+      );
+      color: var(--hero-text);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero-label {
+      margin-bottom: 16px;
+      color: #9fd5e6;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .job-title {
+      max-width: 790px;
+      margin-bottom: 20px;
+      color: #d9ebf2;
+      font-size: clamp(1.15rem, 2vw, 1.42rem);
+      font-weight: 500;
+    }
+
+    .location {
+      margin-bottom: 0;
+      color: var(--hero-muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button-primary {
+      background: #ffffff;
+      color: #102a43;
+    }
+
+    .button-secondary {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: transparent;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .alternate-section {
+      background: var(--surface);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 35px;
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .content-offset {
+      margin-left: 255px;
+    }
+
+    .about-text {
+      max-width: 850px;
+      margin-bottom: 0;
+      font-size: 1.08rem;
+    }
+
+    .timeline {
       position: relative;
-      bottom: 0;
-      width: 100%;
     }
-    ul {
-      padding-left: 20px;
+
+    .timeline::before {
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 7px;
+      width: 2px;
+      content: "";
+      background: var(--border);
     }
-    li {
-      margin-bottom: 10px;
+
+    .experience-item {
+      position: relative;
+      padding: 0 0 42px 42px;
     }
-    .position {
-      font-weight: bold;
+
+    .experience-item:last-child {
+      padding-bottom: 0;
     }
-    .company {
-      font-style: italic;
+
+    .experience-item::before {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      content: "";
+      border: 4px solid var(--background);
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue);
+    }
+
+    .experience-card,
+    .information-card {
+      padding: 27px 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-card h3,
+    .information-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .company,
+    .institution {
+      margin: 5px 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .date-location,
+    .information-meta {
+      margin: 5px 0 20px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .experience-description {
+      margin-top: 20px;
+    }
+
+    .experience-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience-description ul,
+    .information-card ul {
+      margin: 10px 0 0;
+      padding-left: 21px;
+    }
+
+    .experience-description li,
+    .information-card li {
+      margin-bottom: 5px;
+    }
+
+    .subheading {
+      margin: 18px 0 5px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .education-grid,
+    .certification-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .certificate-link {
+      display: inline-flex;
+      margin-top: 8px;
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      background: var(--surface-alt);
+      color: var(--navy);
+      font-size: 0.91rem;
+      font-weight: 650;
+    }
+
+    .contact {
+      padding: 58px;
+      border-radius: var(--radius);
+      background: linear-gradient(
+        135deg,
+        var(--hero-start),
+        var(--hero-end)
+      );
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact p {
+      margin-bottom: 26px;
+      color: #c4d9e2;
+    }
+
+    footer {
+      padding: 30px 0;
+      background: var(--navy-dark);
+      color: #adc2cc;
+      font-size: 0.86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .content-offset {
+        margin-left: 0;
+      }
+
+      .education-grid,
+      .certification-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: min(100% - 24px, 1120px);
+      }
+
+      .floating-controls {
+        top: 12px;
+        right: 12px;
+      }
+
+      .hero {
+        padding: 75px 0 60px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .experience-card,
+      .information-card {
+        padding: 22px;
+      }
+
+      .experience-item {
+        padding-left: 32px;
+      }
+
+      .contact {
+        padding: 38px 22px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+    }
+
+    @media print {
+      .hero-actions,
+      .floating-controls {
+        display: none !important;
+      }
+
+      body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+      }
+
+      .hero {
+        padding: 35px 0;
+        background: #ffffff;
+        color: #000000;
+        border-bottom: 2px solid #102a43;
+      }
+
+      .hero-label,
+      .job-title,
+      .location {
+        color: #36454f;
+      }
+
+      section,
+      .alternate-section {
+        padding: 32px 0;
+        background: #ffffff;
+      }
+
+      .experience-card,
+      .information-card {
+        break-inside: avoid;
+        background: #ffffff;
+        box-shadow: none;
+      }
+
+      .section-title,
+      .experience-card h3,
+      .information-card h3,
+      .subheading {
+        color: #102a43;
+      }
+
+      .contact {
+        background: #ffffff;
+        color: #000000;
+        border: 1px solid #dce3e8;
+      }
+
+      .contact p {
+        color: #36454f;
+      }
+
+      footer {
+        background: #ffffff;
+        color: #36454f;
+      }
     }
   </style>
 </head>
+
 <body>
+  <div class="floating-controls">
+    <button
+      class="control-button language-button"
+      id="language-button"
+      type="button"
+      aria-label="Switch language">
+      NL
+    </button>
 
-<header>
-  <h1>Sjors van Diepen</h1>
-  <p>Business Intelligence Analist, Financial Markets<br>De Nederlandsche Bank</p>
-</header>
+    <button
+      class="control-button"
+      id="theme-button"
+      type="button"
+      aria-label="Switch colour theme">
+      ◐
+    </button>
+  </div>
 
-<nav>
-  <a href="#info">Info</a>
-  <a href="#ervaring">Ervaring</a>
-  <a href="#opleiding">Opleiding</a>
-  <a href="#certificaten">Certificaten</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-content">
+        <div
+          class="hero-label"
+          data-en="Professional profile"
+          data-nl="Professioneel profiel">
+          Professional profile
+        </div>
 
-<main>
+        <h1>Sjors van Diepen</h1>
 
-<section id="info">
-  <h2>Info</h2>
-  <p>🚀 Financial Markets Operations Expert 📊 | Specializing in Data & Reporting 📈 | Power BI & Python 💻 | Treasury Management System Wizard 🧙‍♂️ | Let's connect! #FinancialMarkets #DataAnalytics #TreasuryManagement</p>
-</section>
+        <p
+          class="job-title"
+          data-en="Senior Business Intelligence Analist, Financial Markets at De Nederlandsche Bank"
+          data-nl="Senior Business Intelligence Analist, Financiële Markten bij De Nederlandsche Bank">
+          Senior Business Intelligence Analist, Financial Markets at
+          De Nederlandsche Bank
+        </p>
 
-<section id="ervaring">
-  <h2>Ervaring</h2>
-  <ul>
-    <li>
-      <div class="position">Sr Business Intelligence Analist</div>
-      <div class="company">De Nederlandsche Bank – jul. 2022 – heden</div>
-      <p>Financial Markets - Data & Reporting Team. Empowering the business with insights and data-driven solutions.</p>
-      <ul>
-        <li>Dashboarding</li>
-        <li>Process Automation</li>
-        <li>Regulatory Reporting (MER, MESRAP)</li>
-        <li>Power Platform, Power Automate, Power BI, DAX, MS Fabric</li>
-        <li>Python, SQL, Git, Azure DevOps</li>
-      </ul>
-    </li>
-    <li>
-      <div class="position">Functional Application Manager</div>
-      <div class="company">De Nederlandsche Bank – mei 2019 – jun. 2022</div>
-      <p>Investment Operations – Treasury Management System (WallStreet Suite)</p>
-      <ul>
-        <li>Business requirements & process streamlining</li>
-        <li>Software configuration & vendor collaboration</li>
-      </ul>
-    </li>
-    <li>
-      <div class="position">Middle Office & Back Office</div>
-      <div class="company">De Nederlandsche Bank – apr. 2016 – apr. 2019</div>
-      <p>Cash & collateral management, reconciliations, automation</p>
-      <ul>
-        <li>Platforms: Target 2, T2S, SWIFT, CLS</li>
-        <li>Tools: Excel, VBA</li>
-      </ul>
-    </li>
-    <li>
-      <div class="position">Afstudeerstage – Digital Client Portal</div>
-      <div class="company">De Woonschakel – sep. 2015 – mrt. 2016</div>
-    </li>
-    <li>
-      <div class="position">Stage – Treasury Operations</div>
-      <div class="company">KAS BANK – sep. 2014 – jan. 2015</div>
-    </li>
-    <li>
-      <div class="position">Stage – Assistant Accountant</div>
-      <div class="company">Admi-Lux – okt. 2010 – apr. 2011</div>
-    </li>
-  </ul>
-</section>
+        <p
+          class="location"
+          data-en="Amsterdam, North Holland, Netherlands"
+          data-nl="Amsterdam, Noord-Holland, Nederland">
+          Amsterdam, North Holland, Netherlands
+        </p>
 
-<section id="opleiding">
-  <h2>Opleiding</h2>
-  <ul>
-    <li>
-      <strong>Open Universiteit</strong><br>
-      MSc Business Process Management and IT (2018–2021)<br>
-      Vakken: Business Intelligence, IT Governance, Rule-Based Design, Enterprise Architecture
-    </li>
-    <li>
-      <strong>Hogeschool van Amsterdam</strong><br>
-      BSc, BBA Bedrijfseconomie (2011–2016)
-    </li>
-    <li>
-      <strong>Minor Beleggen – HvA</strong> (2013–2014)
-      <br>Vakken: Technische Analyse, Gedragsanalyse, Value Based Management, etc.
-    </li>
-    <li>
-      <strong>ROC Horizon College</strong><br>
-      MBO niveau 4 Administrateur (2009–2011)
-    </li>
-  </ul>
-</section>
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/in/sjorsvdiepen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-en="View LinkedIn"
+            data-nl="Bekijk LinkedIn">
+            View LinkedIn
+          </a>
 
-<section id="certificaten">
-  <h2>Certificaten</h2>
-  <ul>
-    <li>Microsoft Certified: Power BI Data Analyst Associate (PL-300), Microsoft – jan. 2024 (verloopt: jan. 2026)</li>
-    <li>Lean Six Sigma Green Belt – De Nederlandsche Bank, jun. 2018</li>
-    <li>ACI Treasury Operations Certificate – ACI Financial Markets Association, mei 2018</li>
-  </ul>
-</section>
+          <button
+            class="button button-secondary"
+            type="button"
+            onclick="window.print()"
+            data-en="Print CV"
+            data-nl="CV afdrukken">
+            Print CV
+          </button>
+        </div>
+      </div>
+    </header>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/sjorsvdiepen" target="_blank">linkedin.com/in/sjorsvdiepen</a></p>
-</section>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div
+            class="section-label"
+            data-en="About"
+            data-nl="Profiel">
+            About
+          </div>
 
-</main>
+          <h2
+            class="section-title"
+            data-en="Professional profile"
+            data-nl="Professioneel profiel">
+            Professional profile
+          </h2>
+        </div>
 
-<footer>
-  &copy; 2025 - Sjors van Diepen
-</footer>
+        <div class="content-offset">
+          <p
+            class="about-text"
+            data-en="Financial Markets Operations Expert | Specializing in Data &amp; Reporting | Power BI &amp; Python | Treasury Management System Wizard | Let's connect! #FinancialMarkets #DataAnalytics #TreasuryManagement"
+            data-nl="Expert in Financial Markets Operations | Gespecialiseerd in Data &amp; Reporting | Power BI &amp; Python | Treasury Management System | Laten we verbinden! #FinancialMarkets #DataAnalytics #TreasuryManagement">
+            Financial Markets Operations Expert |
+            Specializing in Data &amp; Reporting |
+            Power BI &amp; Python |
+            Treasury Management System Wizard |
+            Let's connect!
+            #FinancialMarkets #DataAnalytics #TreasuryManagement
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <section id="experience" class="alternate-section">
+      <div class="container">
+        <div class="section-heading">
+          <div
+            class="section-label"
+            data-en="Experience"
+            data-nl="Ervaring">
+            Experience
+          </div>
+
+          <h2
+            class="section-title"
+            data-en="Professional experience"
+            data-nl="Werkervaring">
+            Professional experience
+          </h2>
+        </div>
+
+        <div class="content-offset timeline">
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3>
+                Senior Business Intelligence Analist
+              </h3>
+
+              <p class="company">De Nederlandsche Bank</p>
+
+              <p
+                class="date-location"
+                data-en="Jul 2022 - Present"
+                data-nl="Juli 2022 - heden">
+                Jul 2022 - Present
+              </p>
+
+              <div class="experience-description">
+                <p
+                  data-en="Financial Markets - Data &amp; Reporting Team"
+                  data-nl="Financiële Markten - Data &amp; Reporting Team">
+                  Financial Markets - Data &amp; Reporting Team
+                </p>
+
+                <p
+                  data-en="Empowering the business by providing tailored insights and data-driven solutions to streamline their operations"
+                  data-nl="De business versterken door op maat gemaakte inzichten en datagedreven oplossingen te bieden waarmee operationele processen worden gestroomlijnd">
+                  Empowering the business by providing tailored insights
+                  and data-driven solutions to streamline their operations
+                </p>
+
+                <p
+                  class="subheading"
+                  data-en="Subject Matter Expert:"
+                  data-nl="Vakinhoudelijk expert:">
+                  Subject Matter Expert:
+                </p>
+
+                <ul>
+                  <li>Dashboarding</li>
+
+                  <li
+                    data-en="Process Automation"
+                    data-nl="Procesautomatisering">
+                    Process Automation
+                  </li>
+
+                  <li
+                    data-en="Regulatory Reporting (like MER &amp; MESRAP)"
+                    data-nl="Regelgevingsrapportages, zoals MER &amp; MESRAP">
+                    Regulatory Reporting (like MER &amp; MESRAP)
+                  </li>
+
+                  <li>Power Platform, Power Automate</li>
+
+                  <li>
+                    Power BI (PL-300), Power Query M, DAX,
+                    Power BI Services, MS Fabric
+                  </li>
+
+                  <li>Python, SQL, Git, ADO</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3
+                data-en="Functional Application Manager"
+                data-nl="Functioneel Applicatiebeheerder">
+                Functional Application Manager
+              </h3>
+
+              <p class="company">De Nederlandsche Bank</p>
+
+              <p
+                class="date-location"
+                data-en="May 2019 - Jun 2022 · 3 yrs 2 mos"
+                data-nl="Mei 2019 - juni 2022 · 3 jaar en 2 maanden">
+                May 2019 - Jun 2022 · 3 yrs 2 mos
+              </p>
+
+              <div class="experience-description">
+                <p
+                  data-en="Financial Markets - Investment Operations"
+                  data-nl="Financiële Markten - Investment Operations">
+                  Financial Markets - Investment Operations
+                </p>
+
+                <p
+                  data-en="First point of contact for Changes and Incidents for all Financial Markets software, mainly the Treasury Management System; WallStreet Suite"
+                  data-nl="Eerste aanspreekpunt voor wijzigingen en incidenten voor alle software binnen Financiële Markten, voornamelijk het Treasury Management System: WallStreet Suite">
+                  First point of contact for Changes and Incidents for all
+                  Financial Markets software, mainly the Treasury Management
+                  System; WallStreet Suite
+                </p>
+
+                <ul>
+                  <li
+                    data-en="Identifying and defining business requirements"
+                    data-nl="Identificeren en definiëren van business requirements">
+                    Identifying and defining business requirements
+                  </li>
+
+                  <li
+                    data-en="Configuring the Treasury Management System to streamline processes"
+                    data-nl="Configureren van het Treasury Management System om processen te stroomlijnen">
+                    Configuring the Treasury Management System to
+                    streamline processes
+                  </li>
+
+                  <li
+                    data-en="Collaborating cross-functionally within projects with both business and IT teams"
+                    data-nl="Multidisciplinair samenwerken binnen projecten met business- en IT-teams">
+                    Collaborating cross-functionally within projects
+                    with both business and IT teams
+                  </li>
+
+                  <li
+                    data-en="Engaging with vendors and external consultants for custom software solutions, upgrades, and migrations"
+                    data-nl="Samenwerken met leveranciers en externe consultants aan maatwerkoplossingen, upgrades en migraties">
+                    Engaging with vendors and external consultants for
+                    custom software solutions, upgrades, and migrations
+                  </li>
+
+                  <li
+                    data-en="Managing data migration during significant projects to ensure seamless transition"
+                    data-nl="Beheren van datamigraties tijdens omvangrijke projecten om een soepele overgang te waarborgen">
+                    Managing data migration during significant projects
+                    to ensure seamless transition
+                  </li>
+
+                  <li
+                    data-en="Ensuring accurate master data management, including client and instrument data"
+                    data-nl="Waarborgen van nauwkeurig masterdatabeheer, waaronder klant- en instrumentgegevens">
+                    Ensuring accurate master data management, including
+                    client and instrument data
+                  </li>
+
+                  <li
+                    data-en="Implementing and maintaining access management protocols"
+                    data-nl="Implementeren en onderhouden van protocollen voor toegangsbeheer">
+                    Implementing and maintaining access management protocols
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3>Middle Office &amp; Back Office</h3>
+
+              <p class="company">De Nederlandsche Bank</p>
+
+              <p
+                class="date-location"
+                data-en="Apr 2016 - Apr 2019 · 3 yrs 1 mo"
+                data-nl="April 2016 - april 2019 · 3 jaar en 1 maand">
+                Apr 2016 - Apr 2019 · 3 yrs 1 mo
+              </p>
+
+              <div class="experience-description">
+                <p
+                  data-en="Financial Markets - Investment Operations"
+                  data-nl="Financiële Markten - Investment Operations">
+                  Financial Markets - Investment Operations
+                </p>
+
+                <p
+                  data-en="Running daily operational tasks like cash management, collateral management, reconciliations and matching and monitoring all kind of transactions"
+                  data-nl="Uitvoeren van dagelijkse operationele werkzaamheden, zoals cashmanagement, collateralmanagement, reconciliaties en het matchen en monitoren van verschillende soorten transacties">
+                  Running daily operational tasks like cash management,
+                  collateral management, reconciliations and matching and
+                  monitoring all kind of transactions
+                </p>
+
+                <p
+                  class="subheading"
+                  data-en="Subject Matter Expert:"
+                  data-nl="Vakinhoudelijk expert:">
+                  Subject Matter Expert:
+                </p>
+
+                <ul>
+                  <li>Treasury Management System</li>
+                  <li>Client Services; Cash and Custody</li>
+                  <li>Collateral Management</li>
+                  <li>Cash Management, Nostro, Vostro</li>
+                  <li>Reconciliations and Investigations</li>
+                  <li>Automation, STP</li>
+                  <li>MS Excel + VBA</li>
+                </ul>
+
+                <p
+                  class="subheading"
+                  data-en="Platforms:"
+                  data-nl="Platformen:">
+                  Platforms:
+                </p>
+
+                <p>
+                  Target 2, T2S, Swift (MT/MX), CLS, Euroclear,
+                  Bloomberg, FX-all, WallStreet Suite, Calypso
+                </p>
+
+                <p
+                  class="subheading"
+                  data-en="Financial Products:"
+                  data-nl="Financiële producten:">
+                  Financial Products:
+                </p>
+                
+                <p>
+                  Fixed Income, Equity, Repos, ABS, FRN, Futures, IRS,
+                  FX Derivatives, Deposits, Securities Lending
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3
+                data-en="Graduation internship: Digital Client Portal"
+                data-nl="Afstudeerstage: Digitaal Klantportaal">
+                Graduation internship: Digital Client Portal
+              </h3>
+
+              <p class="company">De Woonschakel</p>
+
+              <p
+                class="date-location"
+                data-en="Sep 2015 - Mar 2016 · 7 mos"
+                data-nl="September 2015 - maart 2016 · 7 maanden">
+                Sep 2015 - Mar 2016 · 7 mos
+              </p>
+
+              <div class="experience-description">
+                <p
+                  data-en="Investment analysis digital client portal"
+                  data-nl="Investeringsanalyse digitaal klantportaal">
+                  Investment analysis digital client portal
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3
+                data-en="Internship: Treasury Operations"
+                data-nl="Stage: Treasury Operations">
+                Internship: Treasury Operations
+              </h3>
+
+              <p class="company">KAS BANK N.V.</p>
+
+              <p
+                class="date-location"
+                data-en="Sep 2014 - Jan 2015 · 5 mos · Amsterdam Area, Netherlands"
+                data-nl="September 2014 - januari 2015 · 5 maanden · Regio Amsterdam">
+                Sep 2014 - Jan 2015 · 5 mos · Amsterdam Area, Netherlands
+              </p>
+
+              <div class="experience-description">
+                <p>Securities Borrowing &amp; Lending</p>
+
+                <p
+                  data-en="Running operations, tasks like:"
+                  data-nl="Uitvoeren van operationele werkzaamheden, zoals:">
+                  Running operations, tasks like:
+                </p>
+
+                <ul>
+                  <li
+                    data-en="Booking, archiving and monitoring of trades."
+                    data-nl="Boeken, archiveren en monitoren van transacties.">
+                    Booking, archiving and monitoring of trades.
+                  </li>
+
+                  <li
+                    data-en="Checking trades with counterparties across the world."
+                    data-nl="Controleren van transacties met tegenpartijen wereldwijd.">
+                    Checking trades with counterparties across the world.
+                  </li>
+
+                  <li
+                    data-en="Processing of incoming recalls."
+                    data-nl="Verwerken van binnenkomende recalls.">
+                    Processing of incoming recalls.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-card">
+              <h3
+                data-en="Internship: Assistant Accountant"
+                data-nl="Stage: Assistent-accountant">
+                Internship: Assistant Accountant
+              </h3>
+
+              <p class="company">Admi-Lux</p>
+
+              <p
+                class="date-location"
+                data-en="Oct 2010 - Apr 2011 · 7 mos · Hoorn"
+                data-nl="Oktober 2010 - april 2011 · 7 maanden · Hoorn">
+                Oct 2010 - Apr 2011 · 7 mos · Hoorn
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div
+            class="section-label"
+            data-en="Education"
+            data-nl="Opleiding">
+            Education
+          </div>
+
+          <h2
+            class="section-title"
+            data-en="Academic background"
+            data-nl="Academische achtergrond">
+            Academic background
+          </h2>
+        </div>
+
+        <div class="content-offset education-grid">
+          <article class="information-card">
+            <h3>MSc, Business Process Management and IT</h3>
+
+            <p class="institution">Open Universiteit</p>
+
+            <p class="information-meta">2018 – 2021</p>
+
+            <p
+              data-en="The programme consists of a pre-master and a master's programme with the following courses:"
+              data-nl="De opleiding bestaat uit een pre-master en een master met onderstaande vakken:">
+              The programme consists of a pre-master and a master's
+              programme with the following courses:
+            </p>
+
+            <ul>
+              <li>Business Intelligence</li>
+              <li>IT Governance</li>
+              <li>Enterprise Architecture</li>
+              <li>Rule-Based Design</li>
+              <li>Business Processes</li>
+              <li>Theses</li>
+            </ul>
+          </article>
+
+          <article class="information-card">
+            <h3
+              data-en="BSc, BBA, Finance & Control"
+              data-nl="BSc, BBA, Bedrijfseconomie">
+              BSc, BBA, Finance & Control
+            </h3>
+
+
+            <p class="institution">
+              Amsterdam University of Applied Sciences
+            </p>
+
+            <p class="information-meta">2011 – 2016</p>
+          </article>
+
+          <article class="information-card">
+            <h3
+              data-en="Minor in Investing"
+              data-nl="Minor Beleggen">
+              Minor in Investing
+            </h3>
+
+            <p class="institution">
+              Amsterdam University of Applied Sciences
+            </p>
+
+            <p class="information-meta">2013 – 2014</p>
+
+            <p
+              data-en="Course overview Minor in Investing (Advanced)"
+              data-nl="Lesstofoverzicht Minor Beleggen (Diep)">
+              Course overview Minor in Investing (Advanced)
+            </p>
+
+            <ul>
+              <li
+                data-en="Investment Advice and Management Theory (AEBT)"
+                data-nl="Advies en Beheer Theorie (AEBT)">
+                Investment Advice and Management Theory (AEBT)
+              </li>
+
+              <li
+                data-en="Investment Advice and Management Skills (AEBV)"
+                data-nl="Advies en Beheer Vaardigheden (AEBV)">
+                Investment Advice and Management Skills (AEBV)
+              </li>
+
+              <li
+                data-en="Behavioural Analysis (GAN)"
+                data-nl="Gedragsanalyse (GAN)">
+                Behavioural Analysis (GAN)
+              </li>
+
+              <li
+                data-en="Ethics (ETH)"
+                data-nl="Ethiek (ETH)">
+                Ethics (ETH)
+              </li>
+
+              <li
+                data-en="Products (PSP)"
+                data-nl="Producten (PSP)">
+                Products (PSP)
+              </li>
+
+              <li
+                data-en="Technical Analysis (TAN)"
+                data-nl="Technische Analyse (TAN)">
+                Technical Analysis (TAN)
+              </li>
+
+              <li>Value Based Management (VBM)</li>
+
+              <li
+                data-en="Financial Research"
+                data-nl="Financieel Onderzoek">
+                Financial Research
+              </li>
+
+              <li>Paper</li>
+            </ul>
+          </article>
+
+          <article class="information-card">
+            <h3
+              data-en="MBO level 4, Administrator"
+              data-nl="MBO niveau 4, Administrateur">
+              MBO level 4, Administrator
+            </h3>
+
+            <p class="institution">ROC Horizon College</p>
+
+            <p class="information-meta">2009 – 2011</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="alternate-section">
+      <div class="container">
+        <div class="section-heading">
+          <div
+            class="section-label"
+            data-en="Licenses &amp; certifications"
+            data-nl="Licenties &amp; certificaten">
+            Licenses &amp; certifications
+          </div>
+
+          <h2
+            class="section-title"
+            data-en="Professional certifications"
+            data-nl="Professionele certificaten">
+            Professional certifications
+          </h2>
+        </div>
+
+        <div class="content-offset certification-grid">
+          <article class="information-card">
+            <h3>
+              Microsoft Certified: Power BI Data Analyst Associate
+              (PL-300)
+            </h3>
+
+            <p class="institution">Microsoft</p>
+
+            <p
+              class="information-meta"
+              data-en="Issued Jan 2024 · Expired Jan 2026"
+              data-nl="Behaald in januari 2024 · Verlopen in januari 2026">
+              Issued Jan 2024 · Expired Jan 2026
+            </p>
+
+            <p>Credential ID 1439920A3C95C1F7</p>
+          </article>
+
+          <article class="information-card">
+            <h3>Lean Six Sigma, Green Belt</h3>
+
+            <p class="institution">
+              De Nederlandsche Bank (DNB)
+            </p>
+
+            <p
+              class="information-meta"
+              data-en="Issued Jun 2018"
+              data-nl="Behaald in juni 2018">
+              Issued Jun 2018
+            </p>
+          </article>
+
+          <article class="information-card">
+            <h3>ACI Treasury Operations Certificate</h3>
+
+            <p class="institution">
+              ACI Financial Markets Association
+            </p>
+
+            <p
+              class="information-meta"
+              data-en="Issued May 2018"
+              data-nl="Behaald in mei 2018">
+              Issued May 2018
+            </p>
+
+            <p>Credential ID EKP-0063-8900-3631-5740</p>
+
+            https://www.acifma.com/certificate-search?nom=Van+Diepen&amp;numaci=EKP-0063-8900-3631-5740
+              Verify certificate
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div
+            class="section-label"
+            data-en="Skills"
+            data-nl="Vaardigheden">
+            Skills
+          </div>
+
+          <h2
+            class="section-title"
+            data-en="Areas of expertise"
+            data-nl="Expertisegebieden">
+            Areas of expertise
+          </h2>
+        </div>
+
+        <div class="content-offset skills">
+          <span class="skill">Dashboarding</span>
+          <span class="skill">Process Automation</span>
+          <span class="skill">Regulatory Reporting</span>
+          <span class="skill">Power Platform</span>
+          <span class="skill">Power Automate</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">Power Query M</span>
+          <span class="skill">DAX</span>
+          <span class="skill">Power BI Services</span>
+          <span class="skill">Microsoft Fabric</span>
+          <span class="skill">Python</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Git</span>
+          <span class="skill">Azure DevOps</span>
+          <span class="skill">Treasury Management System</span>
+          <span class="skill">Collateral Management</span>
+          <span class="skill">Cash Management</span>
+          <span class="skill">Reconciliations and Investigations</span>
+          <span class="skill">Automation</span>
+          <span class="skill">STP</span>
+          <span class="skill">MS Excel + VBA</span>
+          <span class="skill">Accounting</span>
+          <span class="skill">Finance</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact">
+          <h2
+            data-en="Let's connect"
+            data-nl="Neem contact op">
+            Let's connect
+          </h2>
+
+          <p
+            data-en="View my complete professional profile on LinkedIn."
+            data-nl="Bekijk mijn volledige professionele profiel op LinkedIn.">
+            View my complete professional profile on LinkedIn.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/in/sjorsvdiepen/"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-en="Open LinkedIn profile"
+            data-nl="Open LinkedIn-profiel">
+            Open LinkedIn profile
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>
+        © <span id="current-year"></span> Sjors van Diepen
+      </span>
+
+      <span
+        data-en="Business Intelligence · Financial Markets"
+        data-nl="Business Intelligence · Financiële Markten">
+        Business Intelligence · Financial Markets
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const languageButton =
+      document.getElementById("language-button");
+    const themeButton =
+      document.getElementById("theme-button");
+
+    let currentLanguage =
+      localStorage.getItem("cv-language") || "en";
+
+    let currentTheme =
+      localStorage.getItem("cv-theme") || "light";
+
+    function applyLanguage(language) {
+      currentLanguage = language;
+      root.lang = language;
+
+      document
+        .querySelectorAll("[data-en][data-nl]")
+        .forEach((element) => {
+          element.innerHTML = element.dataset[language];
+        });
+
+      languageButton.textContent =
+        language === "en" ? "NL" : "EN";
+
+      languageButton.setAttribute(
+        "aria-label",
+        language === "en"
+          ? "Switch to Dutch"
+          : "Schakel naar Engels"
+      );
+
+      document.title =
+        "Sjors van Diepen | Senior Business Intelligence Analist";
+
+      localStorage.setItem("cv-language", language);
+    }
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      root.dataset.theme = theme;
+
+      themeButton.textContent =
+        theme === "light" ? "◐" : "☀";
+
+      themeButton.setAttribute(
+        "aria-label",
+        theme === "light"
+          ? "Switch to dark mode"
+          : "Switch to light mode"
+      );
+
+      localStorage.setItem("cv-theme", theme);
+    }
+
+    languageButton.addEventListener("click", () => {
+      applyLanguage(
+        currentLanguage === "en" ? "nl" : "en"
+      );
+    });
+
+    themeButton.addEventListener("click", () => {
+      applyTheme(
+        currentTheme === "light" ? "dark" : "light"
+      );
+    });
+
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+
+    applyLanguage(currentLanguage);
+    applyTheme(currentTheme);
+  </script>
 </body>
 </html>
